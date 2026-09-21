@@ -1,0 +1,82 @@
+LS VINTEIRA · GESTÃO & TECH — SITE (VERSÃO COMPACTA, SEM HERO-CARD)
+======================================================================
+
+Ajustes desta versão em relação à anterior:
+
+1. Home (index.html) foi mantida como exceção — H1 e layout do topo
+   seguem exatamente como estavam.
+2. Nas demais páginas (Sobre, Serviços, Soluções, FAQ/Blog, Contato):
+   - H1 menor.
+   - O título e o subtítulo agora ficam dentro de um bloco com 80% da
+     largura da página (classe ".topo-pagina-titulo-area").
+3. Os "hero-card" (painéis escuros tipo "status.log" ao lado dos
+   textos, usados em Serviços e na seção "Nossa jornada" da página
+   Sobre) foram removidos. Essas seções agora usam apenas uma coluna
+   de texto centralizada.
+4. Nas trilhas (Home / Sobre, Home / Serviços etc.), quando o site
+   entra em modo mobile, a barra "/" agora vira um pequeno ícone de
+   três traços empilhados — no mesmo estilo visual do botão de menu
+   hambúrguer — em vez do texto "---".
+5. Textos de todas as páginas foram revisados para reforçar os três
+   pilares do negócio — Pessoas, Processos e Produtos — inclusive no
+   rodapé, que aparece em todas as páginas.
+
+ESTRUTURA
+---------
+index.html       → Home (única página com o quadrado preto ao lado do
+                    subtítulo, e com H1 no tamanho original)
+sobre.html        → Sobre (texto emocional dos três pilares, sem
+                    hero-card)
+servicos.html     → Serviços (Google Business Profile, Criação de
+                    Website, Suporte de Informática, Suporte à Gestão
+                    do Negócio) — sem hero-card, título a 80%
+solucoes.html      → Soluções / Portfólio
+faq-blog.html       → Perguntas frequentes + posts de blog
+contato.html         → Contato (formulário via Netlify Forms)
+obrigado.html         → Página exibida após o envio do formulário
+css/style.css          → Todo o visual do site
+js/script.js             → Menu mobile, FAQ, animações e envio do
+                            formulário
+netlify.toml               → Configuração básica de publicação
+robots.txt / sitemap.xml    → SEO técnico
+
+O QUADRADO PRETO E O H1 DA HOME
+------------------------------------
+Ficam intocados nesta versão — só a Home usa a classe ".quadrado-preto"
+e o H1 em tamanho maior (classe ".destaque h1" no CSS). Nas demais
+páginas, o H1 usa a classe ".topo-pagina h1", agora menor.
+
+O NOVO ÍCONE DA TRILHA (MOBILE)
+------------------------------------
+No CSS, a classe ".separador-tracos" contém três elementos "<i>"
+(pequenas barras horizontais empilhadas) que só aparecem abaixo de
+640px de largura, substituindo a barra "/" (".separador-barra").
+
+COMO PUBLICAR NO NETLIFY
+--------------------------
+1. Acesse https://app.netlify.com
+2. "Add new site" → "Deploy manually"
+3. Arraste esta pasta inteira (ou o .zip extraído) para a área indicada
+4. O Netlify gera um endereço tipo "nome-aleatorio.netlify.app" (pode
+   ser trocado em Site settings → Change site name)
+
+FORMULÁRIO DE CONTATO (NETLIFY FORMS)
+----------------------------------------
+O formulário em contato.html usa o recurso nativo "Netlify Forms".
+Para receber as mensagens em lsvgestao@gmail.com, configure a
+notificação dentro do painel:
+
+  1. No site, vá em "Forms" → "Settings and usage" → "Form notifications"
+  2. "Add notification" → "Email notification"
+  3. Em "Email to notify", coloque: lsvgestao@gmail.com
+  4. Salve
+
+O campo oculto "site" no formulário é um honeypot anti-spam — deve
+permanecer escondido e vazio; não remova.
+
+COMO EDITAR OS TEXTOS
+------------------------
+Cada página .html é independente. Para editar um texto, abra o arquivo
+da página em qualquer editor e altere o conteúdo. Como o menu e o
+rodapé se repetem em cada arquivo, uma alteração neles precisa ser
+feita nas 7 páginas .html.
